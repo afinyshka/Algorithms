@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 def insert_sort(listt: list) -> None:
     """Сортировка элементов массива методом вставки"""
     l = len(listt)
@@ -25,10 +28,32 @@ def bubble_sort(listt: list) -> None:
             if listt[j] > listt[j + 1]:
                 listt[j + 1], listt[j] = listt[j], listt[j + 1]
 
-# Поразрядная сортировка
+
+# Поразрядная сортировка: Radix sort
+
+# get number of digits in largest item
+def num_digits(arr):
+    maxDigit = 0
+    for num in arr:
+        maxDigit = max(maxDigit, num)
+    return len(str(maxDigit))
+ 
+# flatten into a 1D List
+def flatten(arr):
+    return reduce(lambda x, y: x + y, arr)
+ 
+def radix_sort(arr):
+    digits = num_digits(arr)
+    for digit in range(0, digits):
+        temp = [[] for i in range(10)]
+        for item in arr:
+            num = (item // (10 ** digit)) % 10
+            temp[num].append(item)
+        arr = flatten(temp)
+    return arr
+
+
 # Сортировка подсчетом Count sort
-
-
 def count_sort(listt: list) -> None:
     """Сортировка элементов массива методом подсчета"""
     listt_cnt = [0] * (max(listt) + 1)
@@ -62,6 +87,7 @@ def sorting_by_counting(listt: list) -> None:
         for i in range(count):
             lst.append(k)
     return lst
+
 
 def test_sort_algorithms(sort_algorithm: callable) -> None:
     """Проверка методов сортировки"""
