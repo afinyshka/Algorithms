@@ -33,6 +33,7 @@ def bubble_sort(listt: list) -> None:
 
 # get number of digits in largest item
 def num_digits(arr):
+    """Возвращает длину наибольшего элемента массива"""
     maxDigit = 0
     for num in arr:
         maxDigit = max(maxDigit, num)
@@ -40,9 +41,11 @@ def num_digits(arr):
  
 # flatten into a 1D List
 def flatten(arr):
+    """Возвращает сумму элементов массива"""
     return reduce(lambda x, y: x + y, arr)
  
 def radix_sort(arr):
+    """Сортировка элементов массива методом поразрядной сортировки"""
     digits = num_digits(arr)
     for digit in range(0, digits):
         temp = [[] for i in range(10)]
@@ -135,3 +138,6 @@ if __name__ == "__main__":
     # elements = ('foo', 'bar', 'baz')
     # for count, elem in enumerate(elements):
     #     print(count, elem)
+
+    lk = flatten([1, 2, 3, 4, 5])
+    print(lk)
