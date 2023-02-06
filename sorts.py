@@ -54,7 +54,7 @@ def radix_sort(arr):
 
 
 # Сортировка подсчетом Count sort
-def count_sort(listt: list) -> None:
+def count_sort(listt: list) -> list:
     """Сортировка элементов массива методом подсчета"""
     listt_cnt = [0] * (max(listt) + 1)
     for i in range(len(listt)):
@@ -68,6 +68,7 @@ def count_sort(listt: list) -> None:
     return  list_sorted
 
 def sorting_by_counting() -> None:
+    """Сортировка элементов массива методом подсчета при вводе с клавиатуры"""
     a = list(map(int, input().split()))  # считывание списка
     # генерация списка нулей длиной в максимальный элемент списка a
     cnt = [0] * (max(a) + 1)
@@ -77,7 +78,8 @@ def sorting_by_counting() -> None:
     result = [num for num, count in enumerate(cnt) for i in range(count)]
     print(result)  # выводим отсортированный список
 
-def sorting_by_counting(listt: list) -> None:
+def sorting_by_counting(listt: list) -> list:
+    """Сортировка элементов массива методом подсчета"""
     cnt = [0] * (max(listt) + 1)
     for i in listt:
         cnt[i] += 1
