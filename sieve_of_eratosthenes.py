@@ -17,7 +17,7 @@ def is_prime_numbers_printer(n: int) -> str:
 
 prime_numbers_list = is_prime_numbers_printer(10)
 prime_numbers_list = is_prime_numbers_printer(11)
-
+prime_numbers_list = is_prime_numbers_printer(22)
 
 # n = 10
 
