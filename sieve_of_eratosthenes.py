@@ -16,7 +16,7 @@ def is_prime_numbers_printer(n: int) -> str:
         print(f"{i} - {'prime number' if listt[i] else 'not'}")
 
 prime_numbers_list = is_prime_numbers_printer(10)
-
+prime_numbers_list = is_prime_numbers_printer(11)
 
 
 # n = 10
